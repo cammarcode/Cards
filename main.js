@@ -8,7 +8,11 @@ addEventListener('click', click);
 
 
 function tellPos(p){
-    info.innerHTML = 'Position X : ' + p.pageX + '<br />Position Y : ' + p.pageY;
+    info.innerHTML = 'Position X : ' + p.pageX + '<br />Position Y : ' + document.getElementById("dropzone").style.marginRight;
+    x = p.pageX
+    y = p.pageY
+    document.getElementById("dropzone").style.marginLeft = x;
+    document.getElementById("dropzone").style.marginRight = y;
   }
 
 function click(){
@@ -18,8 +22,8 @@ function click(){
 function drag(ev){
     ev.preventDefault()
     ev.dataTransfer.setData("text", ev.target.id);
-    document.getElementById("dropzone").style.left = document.getElementById("testcard").style.left;
-    document.getElementById("dropzone").style.right = document.getElementById("testcard").style.right;
+    document.getElementById("dropzone").style.left = x;
+    document.getElementById("dropzone").style.right = y;
 }
 
 function allowDrop(ev){
@@ -28,6 +32,5 @@ function allowDrop(ev){
 
 function drop(ev) {
     ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
+    ev.target.appendChild(document.getElementById("testcard"));
   }
