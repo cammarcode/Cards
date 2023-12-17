@@ -4,11 +4,6 @@
     height: 70px;
 }
 
-#testcard {
-    position: absolute;
-    left: "0px";
-    right: "0px";
-}
 #deck{
     position: absolute;
     width: 50px;
