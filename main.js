@@ -27,6 +27,11 @@ function click(){
     down = true
     console.log("hit")
     }
+    else{
+        if(x>parseInt(document.getElementById("deck").style.left) && x < parseInt(document.getElementById("deck").style.left) + 50 && y>parseInt(document.getElementById("deck").style.top) && y < parseInt(document.getElementById("deck").style.top) + 70){
+
+        }
+    }
 }
 function release(){
     down = false
